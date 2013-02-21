@@ -90,7 +90,7 @@
 			return s;
 		}
 		var style= css($(opts.target));
-		console.log(style, opts.position);
+		//console.log(style, opts.position);
 		
 		function active_ddSlide(){
 			
