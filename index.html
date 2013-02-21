@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ddSlide - a simple and lightweight plugin for slide an element</title>
+<style>
+*{margin:0; padding:0;}
+body{font-family:Arial, Helvetica, sans-serif; font-size:100%;overflow-x:hidden;}
+
+.green{
+  background-color:#b9d038;
+}
+.blue{
+	background-color:#aad2f2;
+}
+.yellow{
+	background-color:#f7e48a;
+}
+
+.hbtn, .vbtn{
+	color: #FFFFFF;
+	font-size:16px;
+	text-align:center;
+	cursor:pointer;
+	z-index:999999;
+	
+}
+.hbtn{
+	line-height:38px;
+	width:198px;
+	height:38px;
+	position:absolute;
+	left:40%;
+}
+.vbtn{
+	line-height:20px;
+	width:38px; height:194px;
+	position:absolute;
+	top:35%;
+}
+#leftbtn{
+	background-color: #454242;
+	border:1px solid #333;
+	left:0;
+}
+#rightbtn{
+	background-color: #3385D6;
+	border:1px solid #2d7dcb;
+	right:0;
+}
+#rightbtn:hover{
+	background:#2d7dcb;
+}
+
+#topbtn{
+	background-color: #579ea4;
+	border:1px solid #3c8187;
+	top:0;
+}
+#bottombtn{
+	background-color: #d07878;
+	border:1px solid #a25f5f;
+	bottom:0;
+}
+
+
+.cmndiv{
+	border:1px solid #ccc; 
+	background:#f5f5f5;
+	position:absolute;
+	padding:10px; 
+	display:none;
+}
+#topdiv{
+	top: -350px;
+	width:300px;
+	height:350px;
+	left:20%;
+}
+#bottomdiv{
+	width:300px;
+	height:350px;
+	right:350px;
+	bottom:-350px;
+}
+#rightdiv{
+	width:400px; 
+	top:20%;
+	right:-400px;
+	height:350px;
+}
+#leftdiv{
+	width:400px; 
+	top:20%;
+	left:-500px;
+	height:400px;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-------------we have to pass some things like  target, direction, method--->
+<div class="hbtn" id="topbtn">
+	<p>Click Here</p>
+</div>
+
+<div class="hbtn" id="bottombtn">
+	<p>Click Here</p>
+</div>
+
+<div id="leftbtn" class="vbtn">
+	<p>Click Here</p>
+</div>
+
+<div id="rightbtn" class="vbtn">
+	<p>Click Here</p>
+</div>
+
+<div id="rightdiv" class="cmndiv">
+	<h3 class="h3">hi am come from right</h3>
+    <p>and if you'll click again then am go hidden again</p>	
+</div>  
+
+<div id="leftdiv" class="cmndiv">
+	<h3 class="h3">hi am come from Left</h3>
+    <p>and if you'll click again then am go hidden again</p>	
+</div>  
+
+<div id="topdiv" class="cmndiv">
+	<h3 class="h3">hi am come from top</h3>
+    <p>and if you'll click again then am go hidden again</p>	
+</div>  
+
+<div id="bottomdiv" class="cmndiv">
+	<h3 class="h3">hi am come from bottom</h3>
+    <p>and if you'll click again then am go hidden again</p>	
+</div>  
+
+
+  
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="ddSlide.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(e) {
+	
+	$('#rightbtn').ddSlide({
+		target : '#rightdiv',
+		position :'right',
+		animationSpeed : '5000',
+		autoclose:false
+	});
+	
+	$('#bottombtn').ddSlide({
+		target : '#bottomdiv',
+		position :'bottom',
+		animationSpeed : '5000'
+	});
+	
+	$('#leftbtn').ddSlide({
+		target : '#leftdiv',
+		position :'left',
+		animationSpeed : '5000',
+		autoclose:true
+		
+	});
+	
+	$('#topbtn').ddSlide({
+		target : '#topdiv',
+		position :'top',
+		animationSpeed : '5000'
+	});
+	 
+	$('.vbtn').html($('.vbtn').text().replace(/(.)/g,"$1<br />"));
+	
+});
+</script>
+</body>
+</html>
