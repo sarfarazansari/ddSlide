@@ -1,7 +1,8 @@
 /*
- * danimate
+ * ddslide
  * Copyright 2013 Sarfaraz Ansari
- * website url
+ * website url -- http://visualdecoder.com/
+ * Plugin location url -- http://visualdecoder.com/plugins/ddSlide/
  * download location file url -- https://github.com/sarfarazansari/ddSlide
  *
  * Version 1  
